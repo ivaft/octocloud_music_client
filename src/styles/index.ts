@@ -1,10 +1,15 @@
 import { colors, fontSize } from '@/constants/tokens'
-import { StyleSheet } from 'react-native'
+import { Platform, StyleSheet } from 'react-native'
 
 export const defaultStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.background,
+        ...Platform.select({
+            android: {
+                paddingTop: 20
+            },
+        })
     },
     text: {
         fontSize: fontSize.base,

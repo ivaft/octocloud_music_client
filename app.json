@@ -14,13 +14,19 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.zlyntlab.octocloud-music-client"
+      "bundleIdentifier": "com.zlyntlab.octocloud-music-client",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000"
-      }
+      },
+      "package": "com.zlyntlab.octocloud-music-client"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,6 +37,12 @@
     "experiments": {
       "typedRoutes": true,
       "tsconfigPaths": true
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e335026d-0b7b-42ca-8a14-4db19db7effe"
+      }
+    },
+    "owner": "zlynt"
   }
 }
