@@ -14,7 +14,7 @@ export const FloatingPlayer = ({ style }: ViewProps) => {
     const activeTrack = useActiveTrack();
     const lastActiveTrack = useLastActiveTrack();
 
-    const displayedTrack: Track = activeTrack ?? lastActiveTrack;
+    const displayedTrack: Track | undefined = activeTrack ?? lastActiveTrack;
 
     const handlePress = () => {
         router.navigate('/player');

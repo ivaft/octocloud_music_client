@@ -4,15 +4,15 @@ import { View } from "react-native"
 import { StackScreenWithSearchBar } from "@/constants/layout"
 import { defaultStyles } from "@/styles"
 
-const ArtistsLayout = () => {
+const SearchLayout = () => {
     return (<View style={defaultStyles.container}>
         <Stack>
             <Stack.Screen name="index" options={{
                 ...StackScreenWithSearchBar,
-                headerTitle: 'Artists'
+                headerTitle: 'Search'
             }} />
         </Stack>
     </View>)
 }
 
-export default ArtistsLayout;
+export default SearchLayout;

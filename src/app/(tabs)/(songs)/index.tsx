@@ -3,12 +3,22 @@ import { screenPadding } from "@/constants/tokens";
 import { useNavigationSearch } from "@/hooks/useNavigationSearch";
 import { defaultStyles } from "@/styles"
 import { ScrollView, Text, View } from "react-native"
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { trackTitleFilter } from "@/helpers/filter";
-
-import library from '@/assets/data/library.json';
+import { useTracks } from "@/store/library";
+import { generateTrackListId } from "@/helpers/miscellanious";
 
 const SongsScreen = () => {
+    const { tracks, fetchServerTrackList } = useTracks();
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            fetchServerTrackList();
+        }, 10 * 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     const search = useNavigationSearch({
         searchBarOptions: {
             placeholder: 'Search for Song'
@@ -16,10 +26,10 @@ const SongsScreen = () => {
     })
 
     const filteredTracks = useMemo(() => {
-        if (!search) return library
+        if (!search) return tracks
 
-        return library.filter(trackTitleFilter(search))
-    }, [search]);
+        return tracks.filter(trackTitleFilter(search))
+    }, [search, tracks]);
 
     return <View style={defaultStyles.container}>
         <ScrollView
@@ -28,7 +38,7 @@ const SongsScreen = () => {
                 paddingHorizontal: screenPadding.horizontal
             }}
         >
-            <TracksList tracks={filteredTracks} scrollEnabled={false} />
+            <TracksList id={generateTrackListId('songs', search)} tracks={filteredTracks} scrollEnabled={false} />
         </ScrollView>
     </View>
 }

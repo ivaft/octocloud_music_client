@@ -39,14 +39,6 @@ const TabsNavigation = () => {
             />
 
         }}>
-            <Tabs.Screen name="favorites" options={{
-                title: 'Favorites',
-                tabBarIcon: ({ color }) => <MaterialCommunityIcons
-                    name="heart"
-                    size={28}
-                    color={color}
-                />
-            }} />
             <Tabs.Screen name="(songs)" options={{
                 title: 'Songs',
                 tabBarIcon: ({ color }) => <Ionicons
@@ -55,18 +47,26 @@ const TabsNavigation = () => {
                     color={color}
                 />
             }} />
-            <Tabs.Screen name="artists" options={{
+            <Tabs.Screen name="playlist" options={{
                 title: 'Playlists',
                 tabBarIcon: ({ color }) => <FontAwesome6
-                    name="users-line"
+                    name="list-ul"
                     size={20}
                     color={color}
                 />
             }} />
-            <Tabs.Screen name="myaccount" options={{
-                title: 'Profile',
-                tabBarIcon: ({ color }) => <FontAwesome
-                    name="user"
+            <Tabs.Screen name="search" options={{
+                title: 'Search',
+                tabBarIcon: ({ color }) => <FontAwesome6
+                    name="magnifying-glass"
+                    size={20}
+                    color={color}
+                />
+            }} />
+            <Tabs.Screen name="settings" options={{
+                title: 'Settings',
+                tabBarIcon: ({ color }) => <FontAwesome6
+                    name="gear"
                     size={20}
                     color={color}
                 />

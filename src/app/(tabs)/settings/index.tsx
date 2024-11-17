@@ -2,10 +2,10 @@ import { defaultStyles } from "@/styles"
 import { Text, View } from "react-native"
 
 
-const MyAccountScreen = () => {
+const SettingsScreen = () => {
     return <View style={defaultStyles.container}>
-        <Text style={defaultStyles.text}>My Account</Text>
+        <Text style={defaultStyles.text}>Settings</Text>
     </View>
 }
 
-export default MyAccountScreen;
+export default SettingsScreen;
