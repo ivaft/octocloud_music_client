@@ -1,5 +1,21 @@
 [
     {
+        "url": "http://192.168.1.5:8080/api/music/files/Loreen/Tattoo/Loreen%20-%20Tattoo.flac",
+        "title": "Tattoo",
+        "artist": "Loreen",
+        "artwork": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.genius.com%2F11c39eb05ee0e47a3b7925109d2c2d4a.1000x1000x1.png&f=1&nofb=1&ipt=671ecf7ab25ca3aabb49e6052ca1858976c79972dde0ef7147a62cbd7469ce47&ipo=images",
+        "rating": 1,
+        "playlist": []
+    },
+    {
+        "url": "https://archive.org/download/AlanWalkerFadeNCSRelease_201612/Alan%20Walker%20-%20Fade%20%5BNCS%20Release%5D.mp3",
+        "title": "Fade",
+        "artist": "Alan Walker",
+        "artwork": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.discogs.com%2FVNdJ0BxdiY4Y_OpNC5hCYEAyU98%3D%2Ffit-in%2F600x600%2Ffilters%3Astrip_icc()%3Aformat(jpeg)%3Amode_rgb()%3Aquality(90)%2Fdiscogs-images%2FR-9334981-1478794460-4031.jpeg.jpg&f=1&nofb=1&ipt=4758e7c4c3906df36765bf035533580f13b72f968ef08192d7e9f8451f823f94&ipo=images",
+        "rating": 1,
+        "playlist": []
+    },
+    {
         "url": "https://static.wixstatic.com/mp3/80cc5d_40909e0b38bd44c49576164e34d29e85.mp3?dn=FLY%20AWAY%20INUKSHUK%20REMIX.mp3",
         "title": "Fly Away (INUKSHUK REMIX)",
         "artist": "THEFATRAT, ANJULIE",

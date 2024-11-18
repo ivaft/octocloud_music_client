@@ -42,7 +42,7 @@ export const useFetchLibrary = () => {
             let data = await response.json();
             data = data.map((val: any) => {
                 return {
-                    "url": val.filePath,
+                    "url": `https://octocloud.ivanft.com${val.streamUrl}`,
                     "title": val.title,
                     "artist": val.artists ? val.artists.join(" & ") : '',
                     "artwork": val.albumImageURL,
@@ -50,7 +50,6 @@ export const useFetchLibrary = () => {
                     "playlist": []
                 }
             });
-            console.log(data);
             setTracks(data);
         } catch (error) {
             console.error('Error fetching library data:', error);
