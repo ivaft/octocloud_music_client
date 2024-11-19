@@ -9,7 +9,8 @@ const SettingsLayout = () => {
         <Stack>
             <Stack.Screen name="index" options={{
                 ...StackScreenWithSearchBar,
-                headerTitle: 'Settings'
+                headerTitle: 'Settings',
+                headerShown: false
             }} />
         </Stack>
     </View>)

@@ -42,7 +42,7 @@ export const QueueControls = ({ tracks, style, ...viewProps }: QueueControlsProp
     </View>
 }
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     button: {
         padding: 12,
         backgroundColor: 'rgba(47, 47, 47, 0.5)',
