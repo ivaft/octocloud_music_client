@@ -5,6 +5,23 @@ import { create } from "zustand";
 import library from '@/assets/data/library.json';
 import { useEffect } from "react";
 
+interface Artist {
+    Id: string;
+    Name: string;
+}
+interface Album {
+    Id: string;
+    Name: string;
+    ImageUrl: string;
+}
+interface Music {
+    Id: string;
+    Title: string;
+    Album?: Album;
+    Artists: Array<Artist>;
+    StreamUrl: string;
+}
+
 interface LibraryState {
     tracks: TrackWithPlaylist[]
     setTracks: (tracks: TrackWithPlaylist[]) => void
@@ -38,14 +55,14 @@ export const useFetchLibrary = () => {
 
     const fetchLibrary = async () => {
         try {
-            const response = await fetch('https://octocloud.ivanft.com/music');
+            const response = await fetch('https://octocloud.ivanft.com/Music/List');
             let data = await response.json();
-            data = data.map((val: any) => {
+            data = data.map((val: Music) => {
                 return {
-                    "url": `https://octocloud.ivanft.com${val.streamUrl}`,
-                    "title": val.title,
-                    "artist": val.artists ? val.artists.join(" & ") : '',
-                    "artwork": val.albumImageURL,
+                    "url": val.StreamUrl,
+                    "title": val.Title,
+                    "artist": val.Artists? val.Artists.map((artist: Artist) => artist.Name).join(" & ") : "Unkown",
+                    "artwork": val.Album?.ImageUrl ?? "",
                     "rating": 1,
                     "playlist": []
                 }
